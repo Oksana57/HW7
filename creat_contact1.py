@@ -7,15 +7,15 @@ def contact_input():
     # dict2={}
     while True:
         for i in range(1,1000):
-            str1=str(i)
+            # str1=str(i)
             c_name=input('Введите фамилию абонента: ')
             c_surname=input('Введите имя абонента: ')
             c_phone=input('Введите телефон: ')
             c_info=input('Введите описание: ')
             # dict1={}
-            key1=['N','name', 'surname', 'phone', 'info']
+            key1=['name', 'surname', 'phone', 'info']
 
-            contact=[str1, c_name, c_surname, c_phone, c_info]
+            contact=[c_name, c_surname, c_phone, c_info]
             dict1 = {key1[j]: contact[j] for j in range(len(key1))} 
            
             # contact1=' * '.join(contact)
@@ -45,8 +45,8 @@ def contact_input():
 
 
 
-book2=contact_input()
-print(book2)
+# book2=contact_input()
+# print(book2)
 
 # with open ('contact.txt', 'a', encoding='UTF-8' ) as file1:
 #     file1.write(book2)
