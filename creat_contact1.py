@@ -1,5 +1,22 @@
 import csv
 
+id=0
+
+def get_ID():
+    global id
+    id+=1
+    return id
+
+def save_ID():
+     global id
+     with open ('id.txt', 'w', encoding='UTF-8') as file:
+        file.write(str(id))
+
+def get_from_file():
+    global id
+    with open ('id.txt', 'r', encoding='UTF-8') as file:
+        file.read(int(id))
+
 print('Давайте заполним телефонный справочник')
 
 def contact_input():
@@ -7,15 +24,15 @@ def contact_input():
     # dict2={}
     while True:
         for i in range(1,1000):
-            # str1=str(i)
+            id=get_ID()
             c_name=input('Введите фамилию абонента: ')
             c_surname=input('Введите имя абонента: ')
             c_phone=input('Введите телефон: ')
             c_info=input('Введите описание: ')
             # dict1={}
-            key1=['name', 'surname', 'phone', 'info']
+            key1=['N', 'name', 'surname', 'phone', 'info']
 
-            contact=[c_name, c_surname, c_phone, c_info]
+            contact=[id, c_name, c_surname, c_phone, c_info]
             dict1 = {key1[j]: contact[j] for j in range(len(key1))} 
            
             # contact1=' * '.join(contact)
@@ -27,7 +44,7 @@ def contact_input():
 
             if answer=='да':
                 # dict2[i]=dict1
-                
+               
                 continue
                 # while True:
                 #     dict2={i:dict1}
@@ -41,7 +58,6 @@ def contact_input():
         # return book
         
         return book
-    
 
 
 

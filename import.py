@@ -20,4 +20,8 @@ def import_book():
             count+=1
         return alist, contact1
 
-print(import_book())    
+alist, _=import_book()
+_, contact1=import_book()
+# print(import_book()) 
+print(alist)   
+print(*(contact1), sep='\n')
