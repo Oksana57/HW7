@@ -29,12 +29,12 @@ def contact_input():
             # return book
             book='\n'.join(book)
             return book+'\n'
-    # with open ('contact.txt', 'a', encoding='UTF-8' ) as file1:
-    #     file1.write(book +'\n')
+    with open ('contact.txt', 'a', encoding='UTF-8' ) as file1:
+        file1.write(book +'\n')
       
 
-# book2=contact_input()
-# print(book2)
+book2=contact_input()
+print(book2)
 
-# with open ('contact.txt', 'a', encoding='UTF-8' ) as file1:
-#     file1.write(book2)
+with open ('contact.txt', 'a', encoding='UTF-8' ) as file1:
+    file1.write(book2)

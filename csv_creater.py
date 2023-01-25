@@ -6,7 +6,7 @@ from creat_contact1  import contact_input
 
 book2=contact_input()
 def export(book2):
-    csv_columns = ['name', 'surname', 'phone', 'info']
+    csv_columns = ['surname', 'name', 'phone', 'info']
     dict=book2
     csv_file='data.csv'
     try:
@@ -18,6 +18,5 @@ def export(book2):
     except IOError:
         print('I/O error')  
     return
-
 
 export(book2)      
