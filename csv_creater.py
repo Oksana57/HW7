@@ -5,6 +5,10 @@ import csv
 from creat_contact1  import contact_input
 
 book2=contact_input()
+# print(book2)
+# dict=book2
+# print(dict)
+
 def export(book2):
     csv_columns = ['surname', 'name', 'phone', 'info']
     dict=book2
@@ -19,4 +23,4 @@ def export(book2):
         print('I/O error')  
     return
 
-export(book2)      
+# export(book2)      

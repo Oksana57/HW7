@@ -49,7 +49,7 @@ def dict_book(key_of_book, means_of_book):
 
 alist, contact1=import_book()
 # print(alist, contact1)
-
+# print(type(contact1))
 key1=key_of_book(contact1)
 # print(key1)
 means1=means_of_book(contact1)
@@ -70,12 +70,80 @@ def viewing_book():
 # viewing_book()
 
 def find_contact():
-    number=input('Введите номер телефона для поиска')
+    number=input('Введите номер телефона для поиска: ')
     # if number in import_book.import_book:
-    for i in range(len(book1)):
+    # for i in range(len(ali)):
         # for j in range(len(book1[i])):
-        if number in book1[i]:
-            return print('Такой номер есть')
-        else:
-            return print('Такого номера нет')
+    if number in key1:
+        return print('Такой номер есть')
+    else:
+        return print('Такого номера нет')
+    
+
+def user_number():
+    number=input('Введите номер телефона для удаления контакта: ')
+    return number
+
+
+def del_contact():
+    number=user_number()
+    contact1=[]
+    with open('data.csv', 'r', encoding='UTF-8') as file1:
+        cont2=csv.reader(file1, delimiter="*")
+        count=0
+        n=csv.field_size_limit(sys.maxsize)
+        for row in cont2:
+            if count==0:
+            #     alist = ' '.join(row).split()
+                count+=1
+                continue 
+            if 0<count<n:           
+                contact1.append(row)               
+            count+=1
+    for i in  range(len(contact1)):
+            for j in range(len(contact1[i])):
+                if number==contact1[i][j]: 
+                    del contact1[i]
+                    return contact1
+    # csv_columns = ['surname', 'name', 'phone', 'info']
+    # try:
+    #     with open('data.csv', 'w', encoding='UTF-8') as file2:
+    #         writer=csv.DictWriter(file2, fieldnames=csv_columns, delimiter="*")
+        
+    #         writer.writerow(contact1) 
+    # except IOError:
+    #     print('I/O error')  
+    return      
+
+contact2= del_contact()
+# print(contact2)
+
+def book_new(contact2):
+    
+    key1=['name', 'surname', 'phone', 'info']
+    dict2={}
+    book=[]
+    for i in range(len(contact2)):
+        dict2 = {key1[j]: contact2[i][j] for j in range(len(key1))}
+        book.append(dict2)   
+    
+    return book
+
+book=book_new(contact2)
+# print(book)
+
+def new_version(book):
+    dict=book
+    csv_columns = ['surname', 'name', 'phone', 'info']
+    csv_file='data.csv'
+    try:
+        with open(csv_file, 'w') as file_c:
+            writer=csv.DictWriter(file_c, fieldnames=csv_columns, delimiter="*")
+            writer.writeheader()
+            for data in dict:
+                writer.writerow(data)
+    except IOError:
+        print('I/O error')  
     return
+
+new_version(book)

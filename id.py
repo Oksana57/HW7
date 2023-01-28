@@ -1,3 +1,6 @@
+import csv
+import sys
+
 id=0
 
 def get_ID():
@@ -70,4 +73,20 @@ def import_book():
 #     except IOError:
 #         print('I/O error') 
 
-# export(book2)        
+# export(book2)  
+# 
+# contact1=[] 
+# with open('data.csv', 'r', encoding='UTF-8') as file1:
+#         cont2=csv.reader(file1, delimiter="*")
+#         count=0
+#         n=csv.field_size_limit(sys.maxsize)
+#         for row in cont2:
+#             if count==0:
+#             #     alist = ' '.join(row).split()
+#                 count+=1
+#                 continue 
+#             if 0<count<n:           
+#                 contact1.append(row)               
+#             count+=1   
+
+# print(contact1)   

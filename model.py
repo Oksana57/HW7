@@ -12,8 +12,15 @@ contact1=import_book.import_book
 alist=import_book.import_book
 
 def prompt():
+    
     print('Что вы хотите делать со справочником? ')
-    n=int(input('Посмотреть - напишите 1\n Дополнить - напишите 2\n Удалить запись - напишите 3\n Заменить - напишите 4\n Найти - нпишите 5\n'))
+    menu_l=['посмотреть', 'дополнить', 'удалить', 'заменить', 'найти']
+    for i, value in enumerate(menu_l, start=1):
+        print(f'\t{i}, {value}')
+    print()
+    
+def user_input():    
+    n=int(input('выберете пункт меню: '))
     return n
 
 

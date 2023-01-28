@@ -9,11 +9,14 @@ contact1=import_book.import_book
 
 def work_book():
     model.prompt()
-    if model.prompt()==1:
+    u=model.user_input()
+    if u==1:
         import_book.viewing_book()
-    elif model.prompt()==5:
+    elif u==5:
         import_book.find_contact()
-    elif model.prompt()==3:
-        model.del_contact()
+    elif u==3:
+        # import_book.user_number()
+        import_book.import_book()
+        import_book.del_contact()
 
 work_book()

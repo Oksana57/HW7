@@ -6,13 +6,13 @@ def contact_input():
     while True:
         while True:
             for i in range(1,1000):
-                str1=str(i)
+                # str1=str(i)
                 my_contact_name=input('Введите фамилию абонента: ')
                 my_contact_surname=input('Введите имя абонента: ')
                 my_contact_phone=input('Введите телефон: ')
                 my_contact_info=input('Введите описание: ')
 
-                contact=[str1, my_contact_name, my_contact_surname,my_contact_phone, my_contact_info]
+                contact=[my_contact_name, my_contact_surname,my_contact_phone, my_contact_info]
                 contact1=' * '.join(contact)
         
                 print('хотите ввести еще? введите "да" или "нет": ')
